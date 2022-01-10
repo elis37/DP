@@ -10,35 +10,33 @@ import ru.netology.model.response.ExceptionRS;
 @RestControllerAdvice
 public class ExceptionControllerAdvice {
 
-    private static final int DUMMY = 1;
-
     @ExceptionHandler(BadCredentialsException.class)
     public ResponseEntity<ExceptionRS> handleBadCredentials(BadCredentialsException e) {
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ExceptionRS(e.getMessage(), DUMMY));
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ExceptionRS(e.getMessage(), 400));
     }
 
     @ExceptionHandler(InputDataException.class)
     public ResponseEntity<ExceptionRS> handleInputData(InputDataException e) {
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ExceptionRS(e.getMessage(), DUMMY));
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ExceptionRS(e.getMessage(), 400));
     }
 
     @ExceptionHandler(UnauthorizedException.class)
     public ResponseEntity<ExceptionRS> handleUnauthorized(UnauthorizedException e) {
-        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(new ExceptionRS(e.getMessage(), DUMMY));
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(new ExceptionRS(e.getMessage(), 401));
     }
 
     @ExceptionHandler(DeleteFileException.class)
     public ResponseEntity<ExceptionRS> handleDeleteFile(DeleteFileException e) {
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ExceptionRS(e.getMessage(), DUMMY));
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ExceptionRS(e.getMessage(), 500));
     }
 
     @ExceptionHandler(UploadFileException.class)
     public ResponseEntity<ExceptionRS> handleUploadFile(UploadFileException e) {
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ExceptionRS(e.getMessage(), DUMMY));
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ExceptionRS(e.getMessage(), 500));
     }
 
     @ExceptionHandler(GettingFileListException.class)
     public ResponseEntity<ExceptionRS> handleGettingFileList(GettingFileListException e) {
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ExceptionRS(e.getMessage(), DUMMY));
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ExceptionRS(e.getMessage(), 500));
     }
 }
