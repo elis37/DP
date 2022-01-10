@@ -5,8 +5,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import ru.netology.model.request.EditFileNameRQ;
-import ru.netology.model.response.FileRS;
+import ru.netology.dto.request.EditFileNameRQ;
+import ru.netology.dto.response.FileRS;
 import ru.netology.service.CloudStorageService;
 
 import java.util.List;

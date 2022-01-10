@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
-import ru.netology.model.request.AuthenticationRQ;
-import ru.netology.model.response.AuthenticationRS;
+import ru.netology.dto.request.AuthenticationRQ;
+import ru.netology.dto.response.AuthenticationRS;
 import ru.netology.service.AuthenticationService;
 
 @RestController

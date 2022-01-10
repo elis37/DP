@@ -2,8 +2,8 @@ package ru.netology.service;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-import ru.netology.model.request.EditFileNameRQ;
-import ru.netology.model.response.FileRS;
+import ru.netology.dto.request.EditFileNameRQ;
+import ru.netology.dto.response.FileRS;
 
 import java.util.List;
 

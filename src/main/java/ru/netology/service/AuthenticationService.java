@@ -1,8 +1,8 @@
 package ru.netology.service;
 
 import org.springframework.stereotype.Service;
-import ru.netology.model.request.AuthenticationRQ;
-import ru.netology.model.response.AuthenticationRS;
+import ru.netology.dto.request.AuthenticationRQ;
+import ru.netology.dto.response.AuthenticationRS;
 
 @Service
 public class AuthenticationService {
