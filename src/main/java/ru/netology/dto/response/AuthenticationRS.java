@@ -1,4 +1,4 @@
-package ru.netology.model.response;
+package ru.netology.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
