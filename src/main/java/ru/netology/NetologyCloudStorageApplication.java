@@ -9,5 +9,4 @@ public class NetologyCloudStorageApplication {
     public static void main(String[] args) {
         SpringApplication.run(NetologyCloudStorageApplication.class, args);
     }
-
 }
