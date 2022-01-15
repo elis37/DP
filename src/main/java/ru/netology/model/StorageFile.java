@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
@@ -14,12 +15,18 @@ import javax.persistence.*;
 public class StorageFile {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false)
-    private Long id;
+    @Column(nullable = false, unique = true)
+    private String filename;
 
     @Column(nullable = false)
-    private String name;
+    private LocalDateTime date;
+
+    @Column(nullable = false)
+    private Long size;
+
+    @Lob
+    @Column(nullable = false)
+    private byte[] fileContent;
 
     @ManyToOne
     private User user;
