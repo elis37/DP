@@ -1,11 +1,15 @@
 package ru.netology.dto.request;
 
-import lombok.AllArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonCreator;
 import lombok.Data;
 
 @Data
-@AllArgsConstructor
 public class EditFileNameRQ {
 
-    private String name;
+    private String filename;
+
+    @JsonCreator
+    public EditFileNameRQ(String filename) {
+        this.filename = filename;
+    }
 }

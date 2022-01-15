@@ -7,7 +7,7 @@ import ru.netology.model.User;
 
 @Repository
 @Transactional
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface UserRepository extends JpaRepository<User, String> {
 
     User findByUsername(String username);
 }

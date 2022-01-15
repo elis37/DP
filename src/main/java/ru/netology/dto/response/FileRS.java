@@ -8,5 +8,5 @@ import lombok.Data;
 public class FileRS {
 
     private String filename;
-    private Integer size;
+    private Long size;
 }
