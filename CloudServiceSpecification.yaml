@@ -220,14 +220,14 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                type: object #list
                 properties:
                   filename:
                     type: string
                     description: File name
                     required: true
                   size:
-                    type: integer
+                    type: integer #long
                     description: File size in bytes
                     required: true
         '400':
