@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+
+  database:
+    image: mysql
+    container_name: 'cloud-storage-db'
+    volumes:
+      - /mysql_data:/var/lib/mysql
+    environment:
+      MYSQL_USERNAME: root
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: netology
+    ports:
+      - "3306:3306"
