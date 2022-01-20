@@ -29,7 +29,7 @@ public class StorageFileService {
     private AuthenticationRepository authenticationRepository;
     private UserRepository userRepository;
 
-    public void uploadFile(String authToken, String filename, MultipartFile file) {
+    public boolean uploadFile(String authToken, String filename, MultipartFile file) {
         final User user = getUserByAuthToken(authToken);
         if (user == null) {
             log.error("Upload file: Unauthorized");
@@ -39,6 +39,7 @@ public class StorageFileService {
         try {
             storageFileRepository.save(new StorageFile(filename, LocalDateTime.now(), file.getSize(), file.getBytes(), user));
             log.info("Success upload file. User {}", user.getUsername());
+            return true;
         } catch (IOException e) {
             log.error("Upload file: Input data exception");
             throw new InputDataException("Upload file: Input data exception");
