@@ -1,14 +1,21 @@
 package ru.netology;
 
+import org.springframework.mock.web.MockMultipartFile;
+import org.springframework.web.multipart.MultipartFile;
+import ru.netology.dto.request.EditFileNameRQ;
+import ru.netology.dto.response.FileRS;
 import ru.netology.model.StorageFile;
 import ru.netology.model.User;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class TestData {
 
     public static final String TOKEN_1 = "Token1";
     public static final String TOKEN_2 = "Token2";
+    public static final String BEARER_TOKEN = "Bearer Token";
+    public static final String BEARER_TOKEN_SPLIT = BEARER_TOKEN.split(" ")[1];
 
     public static final String USERNAME_1 = "Username1";
     public static final String PASSWORD_1 = "Password1";
@@ -34,4 +41,14 @@ public class TestData {
     public static final StorageFile FOR_RENAME_STORAGE_FILE = new StorageFile(FOR_RENAME_FILENAME, LocalDateTime.now(), FOR_RENAME_SIZE, FOR_RENAME_FILE_CONTENT, USER_1);
 
     public static final String NEW_FILENAME = "NewFilename";
+    public static final EditFileNameRQ EDIT_FILE_NAME_RQ = new EditFileNameRQ(NEW_FILENAME);
+
+    public static final MultipartFile MULTIPART_FILE = new MockMultipartFile(FILENAME_2, FILE_CONTENT_2);
+
+    public static final List<StorageFile> STORAGE_FILE_LIST = List.of(STORAGE_FILE_1, STORAGE_FILE_2);
+
+    public static final FileRS FILE_RS_1 = new FileRS(FILENAME_1, SIZE_1);
+    public static final FileRS FILE_RS_2 = new FileRS(FILENAME_2, SIZE_2);
+    public static final List<FileRS> FILE_RS_LIST = List.of(FILE_RS_1, FILE_RS_2);
+    public static final Integer LIMIT = 100;
 }
