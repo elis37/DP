@@ -1,8 +1,11 @@
 package ru.netology;
 
 import org.springframework.mock.web.MockMultipartFile;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.web.multipart.MultipartFile;
+import ru.netology.dto.request.AuthenticationRQ;
 import ru.netology.dto.request.EditFileNameRQ;
+import ru.netology.dto.response.AuthenticationRS;
 import ru.netology.dto.response.FileRS;
 import ru.netology.model.StorageFile;
 import ru.netology.model.User;
@@ -16,6 +19,7 @@ public class TestData {
     public static final String TOKEN_2 = "Token2";
     public static final String BEARER_TOKEN = "Bearer Token";
     public static final String BEARER_TOKEN_SPLIT = BEARER_TOKEN.split(" ")[1];
+    public static final String BEARER_TOKEN_SUBSTRING_7 = BEARER_TOKEN.substring(7);
 
     public static final String USERNAME_1 = "Username1";
     public static final String PASSWORD_1 = "Password1";
@@ -51,4 +55,9 @@ public class TestData {
     public static final FileRS FILE_RS_2 = new FileRS(FILENAME_2, SIZE_2);
     public static final List<FileRS> FILE_RS_LIST = List.of(FILE_RS_1, FILE_RS_2);
     public static final Integer LIMIT = 100;
+
+    public static final AuthenticationRQ AUTHENTICATION_RQ = new AuthenticationRQ(USERNAME_1, PASSWORD_1);
+    public static final AuthenticationRS AUTHENTICATION_RS = new AuthenticationRS(TOKEN_1);
+
+    public static final UsernamePasswordAuthenticationToken USERNAME_PASSWORD_AUTHENTICATION_TOKEN = new UsernamePasswordAuthenticationToken(USERNAME_1, PASSWORD_1);
 }
